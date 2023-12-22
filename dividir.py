@@ -27,7 +27,7 @@ def extract_frames(video_path, output_folder, every_n_frame):
 # Ruta del video
 video_path = 'DJI_0956.MP4'
 
-# Carpeta de salida para los frames
+# Carpeta de salida para los frames nada
 output_folder = 'frames_DJI_0956'
 
 # Extraer cada 15 frames
