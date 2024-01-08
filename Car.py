@@ -22,6 +22,7 @@ def main():
 
     classes = model.names
     print(classes)
+
     while True:
         ret, frame = cap.read()        
         
@@ -49,17 +50,17 @@ def main():
                 inside_end = (center_y- End_Line_Y1) * (End_Line_X2 - End_Line_X1) - (center_x- End_Line_X1) * (End_Line_Y2 - End_Line_Y1) > 0
                 
                 if inside_start and inside_end:
-                    if class_id == 1:   #Car
+                    if class_id == 1:   #Automovil
                         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 255), 4)
                         cv2.putText(frame, f"ID #{id} {str(classes[class_id])}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 255), 2,)
                         cv2.circle(frame, (center_x, center_y), 5, (0, 255, 255), -1)
 
-                    elif class_id == 0 or class_id == 2 or class_id == 3:   #motorcycle
+                    elif class_id == 0 or class_id == 2 or class_id == 3:   #Motocicleta
                         cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 4)
                         cv2.putText(frame, f"ID #{id} {str(classes[class_id])}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2,)
                         cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
                 else:
-                    cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), 4)
+                    cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 255, 255), 4) #Vehiculo Pesado
                     cv2.putText(frame, f"ID #{id} {str(classes[class_id])}", (x1, y1), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2,)
                     cv2.circle(frame, (center_x, center_y), 5, (255, 255, 255), -1)
                 center_x = 0
