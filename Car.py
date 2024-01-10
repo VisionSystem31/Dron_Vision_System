@@ -2,7 +2,7 @@ import cv2
 from ultralytics import YOLO
 
 def main():
-    model = YOLO("Model_Traffic_N03.pt")
+    model = YOLO("Model_Traffic_M01.pt")
 
     cap = cv2.VideoCapture("DJI_0956.MP4")
     cap.set(cv2.CAP_PROP_FRAME_WIDTH,1280)
